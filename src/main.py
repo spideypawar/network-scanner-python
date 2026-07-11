@@ -1,10 +1,18 @@
 def main():
     print("=" * 40)
-    print("      Network Scanner (Python)")
+    print("Network Scanner Setup")
     print("=" * 40)
-    print("Welcome to the Network Scanner Project!")
-    print("This project is under development.")
-    print("=" * 40)
+
+    developer = input("Enter your name: ")
+
+    print()
+
+    if developer == "Spidey":
+        print("Welcome back, Spidey! 👋")
+    else:
+        print("Welcome,", developer)
+
+    print("Let's build an awesome Network Scanner together!")
 
 
 if __name__ == "__main__":
