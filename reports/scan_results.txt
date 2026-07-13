@@ -1,0 +1,9 @@
+NETWORK SCANNER RESULTS
+=======================
+
+Online Devices
+-----------------------
+
+-----------------------
+Devices Found: 0
+Time Taken: 0.61 seconds
