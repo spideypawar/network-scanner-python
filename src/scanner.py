@@ -1,4 +1,5 @@
 from ping import ping_host
+from report import save_report
 import time
 
 
@@ -23,23 +24,13 @@ def scan_network(network):
             online_ips.append(ip)
 
     end_time = time.time()
+    time_taken = end_time - start_time
 
     print("\n-----------------------------------")
     print("Scan Complete")
     print(f"Devices Found: {online_devices}")
-    print(f"Time Taken: {end_time - start_time:.2f} seconds")
+    print(f"Time Taken: {time_taken:.2f} seconds")
 
-    with open("scan_results.txt", "w") as file:
-        file.write("NETWORK SCANNER RESULTS\n")
-        file.write("=======================\n\n")
-        file.write("Online Devices\n")
-        file.write("-----------------------\n")
-
-        for ip in online_ips:
-            file.write(ip + "\n")
-
-        file.write("\n-----------------------\n")
-        file.write(f"Devices Found: {online_devices}\n")
-        file.write(f"Time Taken: {end_time - start_time:.2f} seconds\n")
+    save_report(online_ips, online_devices, time_taken)
 
     print("\n💾 Results saved to scan_results.txt")
