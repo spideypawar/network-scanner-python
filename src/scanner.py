@@ -1,11 +1,12 @@
 from ping import ping_host
 from report import save_report
+from hostname import get_hostname
 import time
 
 
 def scan_network(network):
     online_devices = 0
-    online_ips = []
+    online_devices_info = []
 
     total_ips = 254
 
@@ -19,9 +20,12 @@ def scan_network(network):
         print(f"Scanning {i}/{total_ips}: {ip}")
 
         if ping_host(ip):
-            print(f"✅ {ip}")
+            hostname = get_hostname(ip)
+
+            print(f"✅ {ip} ({hostname})")
+
             online_devices += 1
-            online_ips.append(ip)
+            online_devices_info.append((ip, hostname))
 
     end_time = time.time()
     time_taken = end_time - start_time
@@ -31,6 +35,6 @@ def scan_network(network):
     print(f"Devices Found: {online_devices}")
     print(f"Time Taken: {time_taken:.2f} seconds")
 
-    save_report(online_ips, online_devices, time_taken)
+    save_report(online_devices_info, online_devices, time_taken)
 
     print("\n💾 Results saved to scan_results.txt")
