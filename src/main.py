@@ -1,4 +1,5 @@
 import ipaddress
+from ping import ping_host
 
 print("===================================")
 print("     NETWORK SCANNER v1")
@@ -9,6 +10,11 @@ ip = input("Enter an IP address: ")
 
 try:
     ipaddress.ip_address(ip)
-    print("✅ Valid IP Address")
+
+    if ping_host(ip):
+        print("✅ Device is Online")
+    else:
+        print("❌ Device is Offline")
+
 except ValueError:
     print("❌ Invalid IP Address")
