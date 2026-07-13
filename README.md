@@ -1,49 +1,48 @@
-# 🌐 Network Scanner (Python)
+# 🌐 Network Scanner Pro
 
-A beginner-friendly Python project that scans a local network to discover active devices.
+A fast multithreaded network scanner built with Python.
 
----
+## ✨ Features
 
-## 📖 About
-
-This project is being built as part of my learning journey in Computer Networking and Python programming.
-
-The goal is to understand how network scanning works while following professional software development practices.
-
----
-
-## 🎯 Objectives
-
-- Learn Python programming
-- Understand IP addressing
-- Learn network scanning concepts
-- Practice Git & GitHub
-- Build a professional networking project
-
----
-
-## 🚀 Project Status
-
-🚧 Currently under development.
-
----
+- ⚡ Multithreaded scanning
+- 🌐 Hostname detection
+- 📄 TXT report generation
+- 📊 CSV export
+- 🎨 Colored command-line interface
+- 📁 Organized project structure
 
 ## 📂 Project Structure
 
-```text
+```
 network-scanner-python/
 │
-├── docs/
-├── screenshots/
 ├── src/
-├── .gitignore
-├── LICENSE
+├── reports/
+├── screenshots/
 ├── README.md
-└── requirements.txt
+├── LICENSE
+├── requirements.txt
+└── .gitignore
 ```
 
----
+## 🚀 Installation
 
-## 📜 License
+```bash
+git clone <repository-url>
+cd network-scanner-python
+pip install -r requirements.txt
+```
 
-This project is licensed under the MIT License.
+## ▶️ Run
+
+```bash
+python src/main.py
+```
+
+## 📸 Screenshots
+
+Add screenshots inside the `screenshots` folder.
+
+## 👨‍💻 Developer
+
+**Spidey**
