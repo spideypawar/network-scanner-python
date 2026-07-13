@@ -1,3 +1,4 @@
+from csv_report import save_csv
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from ping import ping_host
 from hostname import get_hostname
@@ -50,5 +51,7 @@ def scan_network(network):
         len(online_devices_info),
         time_taken
     )
+    save_csv(online_devices_info)
 
     print("\n💾 Results saved to scan_results.txt")
+    print("📄 CSV report saved.")
