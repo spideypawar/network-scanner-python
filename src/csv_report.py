@@ -1,8 +1,11 @@
 import csv
+import os
 
 
 def save_csv(online_devices_info):
-    with open("scan_results.csv", "w", newline="") as file:
+    os.makedirs("reports", exist_ok=True)
+
+    with open("reports/scan_results.csv", "w", newline="") as file:
         writer = csv.writer(file)
 
         writer.writerow(["IP Address", "Hostname"])
