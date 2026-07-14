@@ -219,3 +219,8 @@ __marimo__/
 
 reports/*.txt
 reports/*.csv
+
+# PyInstaller
+build/
+dist/
+*.spec

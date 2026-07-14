@@ -1,3 +1,4 @@
+from colorama import Fore
 from csv_report import save_csv
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from ping import ping_host
@@ -18,7 +19,7 @@ def scan_network(network):
 
     start_time = time.time()
 
-    print("\nScanning...\n")
+    print(Fore.CYAN + "\nScanning...\n")
 
     ips = [f"{network}.{i}" for i in range(1, 255)]
 
@@ -28,23 +29,28 @@ def scan_network(network):
         completed = 0
 
         for future in as_completed(futures):
-            completed += 1
-            print(f"Progress: {completed}/{len(ips)}", end="\r")
+            percentage = (completed / len(ips)) * 100
+            print(
+                Fore.YELLOW +
+                f"Scanning: {completed}/{len(ips)} ({percentage:.1f}%)",
+                end="\r"
+          )
 
             result = future.result()
 
             if result:
                 ip, hostname = result
-                print(f"\n✅ {ip} ({hostname})")
+                print(Fore.GREEN + f"\n✅ {ip:<15} {hostname}")
                 online_devices_info.append(result)
 
     end_time = time.time()
     time_taken = end_time - start_time
 
-    print("\n-----------------------------------")
-    print("Scan Complete")
-    print(f"Devices Found: {len(online_devices_info)}")
-    print(f"Time Taken: {time_taken:.2f} seconds")
+    print(Fore.CYAN + "\n--------------------------------")
+    print(Fore.CYAN + "         SCAN COMPLETE")
+    print(Fore.CYAN + "--------------------------------")
+    print(Fore.GREEN + f"Devices Found : {len(online_devices_info)}")
+    print(Fore.YELLOW + f"Time Taken    : {time_taken:.2f} seconds")
 
     save_report(
         online_devices_info,
@@ -53,5 +59,5 @@ def scan_network(network):
     )
     save_csv(online_devices_info)
 
-    print("\n💾 Results saved to scan_results.txt")
-    print("📄 CSV report saved.")
+    print(Fore.GREEN + "\n📄 Results saved to reports/scan_results.txt")
+    print(Fore.GREEN + "📊 CSV report saved to reports/scan_results.csv")
