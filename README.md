@@ -1,46 +1,86 @@
-![Python](https://img.shields.io/badge/Python-3.14-blue)
-![Version](https://img.shields.io/badge/Version-1.0-green)
-![License](https://img.shields.io/badge/License-MIT-yellow)
-
 # 🌐 Network Scanner Pro
 
-A fast multithreaded network scanner built with Python.
+> A professional multithreaded network scanner built with Python.
+
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+![Platform](https://img.shields.io/badge/Platform-Windows-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-v1.0.0-success)
+
+---
+
+## 📖 Overview
+
+Network Scanner Pro is a fast and lightweight command-line tool that scans devices on a local network, detects hostnames, and generates detailed scan reports in TXT and CSV formats.
+
+This project was built to learn Python networking, multithreading, file handling, and CLI application development.
+
+---
 
 ## ✨ Features
 
-- ⚡ Multithreaded scanning
+- ⚡ Fast multithreaded network scanning
 - 🌐 Hostname detection
 - 📄 TXT report generation
-- 📊 CSV export
-- 🎨 Colored command-line interface
+- 📊 CSV report generation
+- 🎨 Professional colorized terminal interface
+- 📁 View previous scan reports
+- 📦 Windows executable (.exe)
 
-## 🚀 Run
+---
+
+## 📷 Screenshots
+
+> Add screenshots inside the `screenshots/` folder.
+
+- Main Menu
+- Network Scanning
+- Scan Results
+- Previous Report
+
+---
+
+## 🚀 Installation
+
+Clone the repository:
 
 ```bash
-python src/main.py
-
-## 📥 Installation
-
-1. Clone the repository
-
-```bash
-git clone <repository-url>
+git clone https://github.com/spideypawar/network-scanner-python.git
 ```
 
-2. Go to the project folder
+Go to the project folder:
 
 ```bash
 cd network-scanner-python
 ```
 
-3. Install the required package
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
-## 📁 Project Structure
 
+---
+
+## ▶️ Usage
+
+Run the application:
+
+```bash
+python src/main.py
 ```
+
+Or run the Windows executable:
+
+```text
+dist/main.exe
+```
+
+---
+
+## 📂 Project Structure
+
+```text
 network-scanner-python/
 │
 ├── src/
@@ -56,11 +96,51 @@ network-scanner-python/
 ├── screenshots/
 ├── docs/
 ├── README.md
-├── LICENSE
 ├── requirements.txt
+├── LICENSE
 └── .gitignore
 ```
-```
-## 👨‍💻 Developer
+
+---
+
+## 🛠 Technologies Used
+
+- Python 3
+- Colorama
+- ThreadPoolExecutor
+- PyInstaller
+- Git
+- GitHub
+
+---
+
+## 📄 Reports
+
+The application automatically generates:
+
+- TXT Scan Report
+- CSV Scan Report
+
+Reports are stored inside the `reports/` directory.
+
+---
+
+## 🔮 Future Improvements
+
+- Port Scanner
+- MAC Address Detection
+- Vendor Lookup
+- Network Mapping
+- GUI Version
+
+---
+
+## 👨‍💻 Author
 
 **Harshit Pawar**
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
