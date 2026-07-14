@@ -29,17 +29,6 @@ This project was built to learn Python networking, multithreading, file handling
 
 ---
 
-## 📷 Screenshots
-
-> Add screenshots inside the `screenshots/` folder.
-
-- Main Menu
-- Network Scanning
-- Scan Results
-- Previous Report
-
----
-
 ## 🚀 Installation
 
 Clone the repository:
